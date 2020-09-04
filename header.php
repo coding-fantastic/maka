@@ -214,7 +214,7 @@ admin::checkSession();
 
 
                                     <li>
-                                        <a href="#">Accounts Manager</a>
+                                        <a href="amanager">Accounts Manager</a> 
                                     </li>
                                     <li>
                                         <a href="#" data-toggle="modal" data-target="#debitAccountModal">Debit Account</a>
@@ -353,15 +353,7 @@ admin::checkSession();
                             </button>
                         </div>
                         <div class="modal-body">
-                            <!--<div class="form-group">
-                                <label>Before Date</label>
-                                <input type="text" class="form-control datepicker" id="simpleinput" id="datepicker" value="" name="before_date" required>
-                            </div>
-                            <div class="form-group">
-                                <label>After Date</label>-->
-                                <!--<input type="text" class="form-control" aria-describedby="emailHelp" placeholder="" id="regno" class="typeahead" autocomplete="off" name="regno">-->
-                                <!--<input type="text" class="form-control datepicker" id="simpleinput" id="datepicker" value="" name="after_date" required>
-                            </div>-->
+                            
                             
                             <div class="col"><label class="col-lg-12 col-form-label" for="simpleinput">Account Name</label>
                                     <div class="col-lg-12">
@@ -796,7 +788,7 @@ admin::checkSession();
         <!-- transactions Overtime Modal -->
         <div class="modal fade" id="transactionsOvertimeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
-                <form action="#" autocomplete="off" method="post" target="_blank">
+                <form action="outputtranovertime" autocomplete="off" method="post" target="_blank">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="transactionsOvertimeModal">transactions Overtime </h5>
@@ -831,7 +823,7 @@ admin::checkSession();
         <!-- transactions ByType  Modal -->
         <div class="modal fade" id="transactionsByTypeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
-                <form action="#" autocomplete="off" method="post">
+                <form action="outputtbt" autocomplete="off" method="post" target="_blank">
 
                     <div class="modal-content">
                         <div class="modal-header">
@@ -842,9 +834,11 @@ admin::checkSession();
                         </div>
                         <div class="modal-body">
 
-                            <div class="col"><label class="col-lg-12 col-form-label" for="simpleinput">Type</label>
+                            <div class="col">
+                                <label>Leave blank to print all transactoins by type</label>
+                                <label class="col-lg-12 col-form-label" for="simpleinput">Type</label>
                                 <div class="col-lg-12">
-                                    <select class="form-control custom-select" required name="instructed_by">
+                                    <select class="form-control custom-select"  name="instructed_by">
                                         <option selected disabled>Select</option>
 
                                         <option value="">Debits(DR)</option>
@@ -856,12 +850,12 @@ admin::checkSession();
 
                             <div class="form-group">
                                 <label>From</label>
-                                <input type="text" class="form-control datepicker" id="simpleinput" id="datepicker" value="" name="before_date" required>
+                                <input type="text" class="form-control datepicker" id="simpleinput" id="datepicker" value="" name="before_date" >
                             </div>
                             <div class="form-group">
                                 <label>To</label>
                                 <!--<input type="text" class="form-control" aria-describedby="emailHelp" placeholder="" id="regno" class="typeahead" autocomplete="off" name="regno">-->
-                                <input type="text" class="form-control datepicker" id="simpleinput" id="datepicker" value="" name="after_date" required>
+                                <input type="text" class="form-control datepicker" id="simpleinput" id="datepicker" value="" name="after_date" >
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -879,7 +873,7 @@ admin::checkSession();
         <!-- cashier Daily Summary Modal -->
         <div class="modal fade" id="cashierDailySummaryModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
-                <form action="#" autocomplete="off" method="post">
+                <form action="outputcds" autocomplete="off" method="post" target="_blank">
 
                     <div class="modal-content">
                         <div class="modal-header">
@@ -889,14 +883,27 @@ admin::checkSession();
                             </button>
                         </div>
                         <div class="modal-body">
+                            <div class="col">
+                                <label>Leave blank to print all cashier daily summary</label>
+                                <label class="col-lg-12 col-form-label" for="simpleinput">Type</label>
+                                <div class="col-lg-12">
+                                    <select class="form-control custom-select"  name="instructed_by">
+                                        <option selected disabled>Select</option>
+
+                                        <option value="">Debits(DR)</option>
+                                        <option value="">Credits(CR)</option>
+
+                                    </select>
+                                </div>
+                            </div>
                             <div class="form-group">
                                 <label>From</label>
-                                <input type="text" class="form-control datepicker" id="simpleinput" id="datepicker" value="" name="before_date" required>
+                                <input type="text" class="form-control datepicker" id="simpleinput" id="datepicker" value="" name="before_date" >
                             </div>
                             <div class="form-group">
                                 <label>To</label>
                                 <!--<input type="text" class="form-control" aria-describedby="emailHelp" placeholder="" id="regno" class="typeahead" autocomplete="off" name="regno">-->
-                                <input type="text" class="form-control datepicker" id="simpleinput" id="datepicker" value="" name="after_date" required>
+                                <input type="text" class="form-control datepicker" id="simpleinput" id="datepicker" value="" name="after_date" >
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -914,24 +921,35 @@ admin::checkSession();
         <!-- System Audit Trail Modal -->
         <div class="modal fade" id="systemAuditTrailModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
-                <form action="#" autocomplete="off" method="post">
+                <form action="outputsat" autocomplete="off" method="post" target="_blank">
 
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="systemAuditTrailModal">System Audit Trail</h5>
+                            <h5 class="modal-title" id="systemAuditTrailModal">Activity Log Report</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
+                            <label>Leave blank to print all System Audit Trail</label>
+                                <label class="col-lg-12 col-form-label" for="simpleinput">User Id</label>
+                                <div class="col-lg-12">
+                                    <select class="form-control custom-select"  name="instructed_by">
+                                        <option selected disabled>Select</option>
+
+                                        <option value="">Debits(DR)</option>
+                                        <option value="">Credits(CR)</option>
+
+                                    </select>
+                                </div>
                             <div class="form-group">
                                 <label>From</label>
-                                <input type="text" class="form-control datepicker" id="simpleinput" id="datepicker" value="" name="before_date" required>
+                                <input type="text" class="form-control datepicker" id="simpleinput" id="datepicker" value="" name="before_date" >
                             </div>
                             <div class="form-group">
                                 <label>To</label>
                                 <!--<input type="text" class="form-control" aria-describedby="emailHelp" placeholder="" id="regno" class="typeahead" autocomplete="off" name="regno">-->
-                                <input type="text" class="form-control datepicker" id="simpleinput" id="datepicker" value="" name="after_date" required>
+                                <input type="text" class="form-control datepicker" id="simpleinput" id="datepicker" value="" name="after_date" >
                             </div>
                         </div>
                         <div class="modal-footer">
