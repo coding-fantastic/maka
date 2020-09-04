@@ -254,7 +254,7 @@ admin::checkSession();
                                         <ul>
                                             <li><a href="#" data-toggle="modal" data-target="#accountsListOvertimeModal">Accounts List-Overtime</a></li>
                                             <li><a href="#" data-toggle="modal" data-target="#accountTrackingModal">Account Tracking</a></li>
-                                            <li><a href="#">Today Transactions</a></li>
+                                            <li><a href="outputtodaytransactions" target="_blank">Today Transactions</a></li>
                                             <li><a href="#" data-toggle="modal" data-target="#transactionsOvertimeModal">Transactions-Overtime</a></li>
                                             <li><a href="#" data-toggle="modal" data-target="#transactionsByTypeModal">Transactions-By Type</a></li>
                                             <li><a href="#" data-toggle="modal" data-target="#cashierDailySummaryModal">Cashier Daily Summary</a></li>
@@ -478,7 +478,7 @@ admin::checkSession();
         <!-- Account Tracking Modal -->
         <div class="modal fade" id="accountTrackingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
-                <form action="reassessment" autocomplete="off" method="post">
+                <form action="outputaccounttracking" autocomplete="off" method="post" target="_blank">
 
 
                     <div class="modal-content">
@@ -524,12 +524,12 @@ admin::checkSession();
                                     </div>
                                 </div>
                                 <label>From</label>
-                                <input type="text" class="form-control datepicker" id="simpleinput" id="datepicker" value="" name="before_date" required>
+                                <input type="text" class="form-control datepicker" id="simpleinput" id="datepicker" value="" name="before_date" >
                             </div>
                             <div class="form-group">
                                 <label>To</label>
                                 <!--<input type="text" class="form-control" aria-describedby="emailHelp" placeholder="" id="regno" class="typeahead" autocomplete="off" name="regno">-->
-                                <input type="text" class="form-control datepicker" id="simpleinput" id="datepicker" value="" name="after_date" required>
+                                <input type="text" class="form-control datepicker" id="simpleinput" id="datepicker" value="" name="after_date" >
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -551,7 +551,7 @@ admin::checkSession();
         <!-- Insurance Valuation Modal -->
         <div class="modal fade" id="insuranceValuationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
-                <form action="output" autocomplete="off" method="post" >
+                <form action="output" autocomplete="off" method="post" target="_blank" >
 
                     <div class="modal-content">
                         <div class="modal-header">
@@ -721,11 +721,12 @@ admin::checkSession();
             </div>
         </div>
 
+        
 
         <!-- accountsListOvertime Modal -->
         <div class="modal fade" id="accountsListOvertimeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
-                <form action="#" autocomplete="off" method="post">
+                <form action="outputaccountlistovertime" autocomplete="off" method="post" target="_blank">
 
                     <div class="modal-content">
                         <div class="modal-header">
@@ -735,19 +736,20 @@ admin::checkSession();
                             </button>
                         </div>
                         <div class="modal-body">
+                            <label>Leave blank to display all values</label>
                             <div class="form-group">
                                 <label>From</label>
-                                <input type="text" class="form-control datepicker" id="simpleinput" id="datepicker" value="" name="before_date" required>
+                                <input type="text" class="form-control datepicker" id="simpleinput" id="datepicker" value="" name="before_date" >
                             </div>
                             <div class="form-group">
                                 <label>To</label>
                                 <!--<input type="text" class="form-control" aria-describedby="emailHelp" placeholder="" id="regno" class="typeahead" autocomplete="off" name="regno">-->
-                                <input type="text" class="form-control datepicker" id="simpleinput" id="datepicker" value="" name="after_date" required>
+                                <input type="text" class="form-control datepicker" id="simpleinput" id="datepicker" value="" name="after_date" >
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary push-left" data-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Proceed</button>
+                            <button type="button" class="btn btn-secondary push-left" data-dismiss="modal ">Close</button>
+                            <button type="submit" class="btn btn-primary" data-target="_blank">Proceed</button>
                         </div>
                     </div>
 
@@ -760,7 +762,7 @@ admin::checkSession();
         <!-- account Tracking Modal -->
         <div class="modal fade" id="accountTrackingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
-                <form action="#" autocomplete="off" method="post">
+                <form action="#" autocomplete="off" method="post" target="_blank">
 
                     <div class="modal-content">
                         <div class="modal-header">
@@ -794,8 +796,7 @@ admin::checkSession();
         <!-- transactions Overtime Modal -->
         <div class="modal fade" id="transactionsOvertimeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
-                <form action="#" autocomplete="off" method="post">
-
+                <form action="#" autocomplete="off" method="post" target="_blank">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="transactionsOvertimeModal">transactions Overtime </h5>
@@ -804,14 +805,15 @@ admin::checkSession();
                             </button>
                         </div>
                         <div class="modal-body">
+                            <label>Leave empty to display all </label>
                             <div class="form-group">
                                 <label>From</label>
-                                <input type="text" class="form-control datepicker" id="simpleinput" id="datepicker" value="" name="before_date" required>
+                                <input type="text" class="form-control datepicker" id="simpleinput" id="datepicker" value="" name="before_date" >
                             </div>
                             <div class="form-group">
                                 <label>To</label>
                                 <!--<input type="text" class="form-control" aria-describedby="emailHelp" placeholder="" id="regno" class="typeahead" autocomplete="off" name="regno">-->
-                                <input type="text" class="form-control datepicker" id="simpleinput" id="datepicker" value="" name="after_date" required>
+                                <input type="text" class="form-control datepicker" id="simpleinput" id="datepicker" value="" name="after_date" >
                             </div>
                         </div>
                         <div class="modal-footer">
