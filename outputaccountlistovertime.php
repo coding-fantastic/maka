@@ -83,18 +83,20 @@ OGINGA ODINGA STREET KISUMU<br>
 
         <p style="text-align:center;font-size:12px; font-weight:bold;font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;margin:0 0 0 0px">From:&nbsp;&nbsp;
             <?php 
-            if(isset($_POST['before_date']))
-                echo $_POST['before_date'];
-            else
+            if(empty($_POST['before_date']))
                 echo  "2020-01-01";
+            else
+                
+                echo $_POST['before_date'];
              ?>
             &nbsp;&nbsp;
             To:&nbsp;
             <?php
-            if(isset($_POST['after_date']))
-                echo $_POST['after_date'];
-            else
+            if(empty($_POST['after_date']))
                 echo  date('Y-m-d');
+                
+            else
+                echo $_POST['after_date'];
             ?>
         </p>
 
